@@ -19,6 +19,7 @@ gem 'figaro'
 group :development, :test do
   gem 'webdrivers'
   gem 'pry'
+  gem 'capybara'
 end
 
 group :test do

@@ -22,6 +22,14 @@ function loadMerchantsWithMostRevenue(container) {
   })
 }
 
+function loadMerchantRevenue(merchant_id, container) {
+  let uri = `/api/v1/merchants/${merchant_id}/revenue`
+  loadResource(uri, function(merchant){
+    revenue_element = merchantRevenue(merchant)
+    container.append(revenue_element)
+  })
+}
+
 function loadMerchantsWithMostItemsSold(container) {
   let uri = '/api/v1/merchants/most_items?quantity=10'
   loadMultipleResources(uri, function(merchant){
