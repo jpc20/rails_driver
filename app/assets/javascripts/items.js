@@ -14,6 +14,18 @@ function itemCard(item) {
   return card
 }
 
+function itemMerchantCard(merchantRelationship) {
+  let merchant = merchantRelationship.attributes
+  let card = `
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title"><a href='/merchants/${merchant.id}'>Merchant: ${merchant.name}</a></h4>
+      </div>
+    </div>
+  `
+  return card
+}
+
 function loadAllItems(container) {
   let uri = "/api/v1/items"
   loadMultipleResources(uri, function(item){
@@ -26,6 +38,10 @@ function loadItem(item_id, itemContainer) {
   let uri = `/api/v1/items/${item_id}`
   loadResource(uri, function(item){
     card = itemCard(item)
+    itemContainer.append(card)
+  })
+  loadRelationship(uri, function(itemMerchant){
+    card = itemMerchantCard(itemMerchant)
     itemContainer.append(card)
   })
 }
