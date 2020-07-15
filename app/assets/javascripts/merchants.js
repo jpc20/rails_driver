@@ -28,6 +28,14 @@ function merchantAdminHeader(merchant) {
   return merchant_element
 }
 
+function merchantRevenue(merchant) {
+  let revenue = merchant.attributes.revenue
+  let revenue_element = `
+      <h3>Total revenue: ${revenue}</h3>
+  `
+  return revenue_element
+}
+
 function loadAllMerchants(container) {
   let uri = "/api/v1/merchants"
   loadMultipleResources(uri, function(merchant){
