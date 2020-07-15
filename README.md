@@ -1,6 +1,6 @@
 # Rails Driver
 
-This application is part of the [Rails Engine](https://backend.turing.io/module3/projects/rails_engine) project for the Turing School of Software and Design.
+This application is part of the [Rails Engine](https://github.com/jpc20/rails_engine) project for the Turing School of Software and Design.
 
 It includes
 
